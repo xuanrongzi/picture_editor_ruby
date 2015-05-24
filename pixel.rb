@@ -5,16 +5,16 @@ class Pixel
 
       @red, @green, @blue=red, green, blue
     else
-      raise Error, 'Wrong type for Pixel'
+      raise Exception 'Wrong type for Pixel'
     end
     if (red>255)|(red<0)|(green>255)|(green<0)|(blue>255)|(blue<0)
-      raise Error,  "Color Out of Bound, #{red},#{green}, #{blue}"
+      raise Exception  "Color Out of Bound, #{red},#{green}, #{blue}"
     end
     brtn
   end
 
   def brtn
-    @brightness=0.2126 * @red + 0.7152 * @green + 0.0722 * @blue
+    @brightness=(0.2126 * @red + 0.7152 * @green + 0.0722 * @blue)/255
   end
   def rgb
     [@red,@green,@blue]
