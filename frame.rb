@@ -131,30 +131,13 @@ class Frame
 
   def render
     print "Below listed the elements in the graph: #{@title} \n"
-    0.upto(@height-1)do |i|
-      0.upto(@width-1)do |j|
+    0.upto(@width-1)do |j|
+      0.upto(@height-1)do |i|
         print '%03d,%03d,%03d  ' %[@frame[i][j].r,@frame[i][j].g,@frame[i][j].b]
       end
       print "\n"
     end
   end
 
-  a=Frame.new(3,3,Pixel.new(1,2,3),"Piazza")
-  a[1,1]=Pixel.new(1,1,1)
-  a[1,0]=Pixel.new(2,2,2)
-  a[0,1].r=11
-  a[0,0].r=10
-  a[2,2]=a[1,1]
 
-  b=Frame.new(3,3,Pixel.new(1,2,3),"Piazza")
-  b[1,1]=Pixel.new(1,1,1)
-  b[1,0]=Pixel.new(2,2,2)
-  b[0,1].r=11
-  b[0,0].r=12
-  b[2,2]=a[1,1]
-   c=a.equal?b
-  print c
-  p a.get_Average
-  d=b.separate
-  p d[0].title
 end
